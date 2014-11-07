@@ -1,0 +1,56 @@
+1101|Nhiệt độ cơ thể là 37 độ C
+1102|Nhiệt độ cơ thể lớn hơn 37 độ C
+1103|Nhiệt độ cơ thể nhỏ hơn 37 độ C
+1104|Nhiệt độ cơ thể lớn hơn 38 độ C
+1105|Nhiệt độ cơ thể nhỏ hơn 36 độ C
+1151|Bị sốt
+1152|Bị sốt cao
+1153|Bị hạ thân nhiệt
+1201|Tuổi nhỏ hơn hoặc bằng 5
+1202|Tuổi nhỏ hơn hoặc bằng 10
+1203|Tuổi nhỏ hơn hoặc bằng 25
+1204|Tuổi nhỏ hơn hoặc bằng 30
+1205|Tuổi nhỏ hơn hoặc bằng 55
+1206|Tuổi nhỏ hơn hoặc bằng 70
+1207|Tuổi lớn hơn 5
+1208|Tuổi lớn hơn 10
+1209|Tuổi lớn hơn 25
+1210|Tuổi lớn hơn 35
+1211|Tuổi lớn hơn 55
+1212|Tuổi lớn hơn 70
+1301|Nhịp tim từ 65 tới 75 nhịp/phút
+1302|Nhịp tim hơn 75 nhịp/phút
+1303|Nhịp tim dưới 65 nhịp/phút
+1401|Chiều cao dưới 1m50
+1402|Chiều cao từ 1m50 tới 1m70
+1403|Chiều cao trên 1m70
+1501|Cân nặng dưới 40kg
+1502|Cân nặng từ 40 kg tới dưới 60kg
+1503|Cân nặng từ 60 kg tới dưới 80kg
+1504|Cân nặng trên 80 kg
+1601|Bị ngạt mũi
+1602|Bị nhức đầu
+1603|Bị hắt hơi
+1604|Bị ho
+1604|Bị đờm trong cổ
+1605|Cảm giác buồn nôn
+1606|Bị ho ra máu
+1607|Bị khó thở
+1701|Thường xuyên hút thuốc
+1702|Thỉnh thoảng hút thuốc
+1703|Không hút thuốc
+1704|Uống rượu bia nhiều
+1705|Uống rượu bia ít
+1706|Không uống rượu bia
+5101|Bạn bị bệnh cảm cúm do virus
+5102|Bạn bị bệnh viêm họng
+5103|Bạn bị bệnh viêm phổi
+5104|Bạn bị bệnh viêm xoang
+5105|Bạn bị bệnh hen phế quản
+5106|Bạn bị bệnh lao phổi
+5107|Bạn bị bệnh ung thư phổi
+5108|Bạn bị bệnh phổi tắc nghẽn mãn tính
+5109|Bạn bị bệnh dãn phế quản
+5110|Bạn bị bệnh ho gà
+5111|Bạn bị bệnh bụi phổi
+5112|Bạn bị tràn dịch màng phổi
