@@ -79,7 +79,11 @@ public class Calculate {
         if ((CF1 > 0) && (CF2 > 0))
             return CF1 + CF2 - CF1 * CF2;
         
-        return (CF1 + CF2) / ( 1 - Min(Abs(CF1), Abs(CF2)));
+        float d = 1 - Min(Abs(CF1), Abs(CF2));
+        if (d != 0)
+            return (CF1 + CF2) / d;
+        else
+            return 0;
     }
     public float RecuresiveCalculate(int nIDEvent)
     {

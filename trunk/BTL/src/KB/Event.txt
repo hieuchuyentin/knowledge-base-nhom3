@@ -32,10 +32,10 @@
 1602|Bị nhức đầu
 1603|Bị hắt hơi
 1604|Bị ho
-1604|Bị đờm trong cổ
-1605|Cảm giác buồn nôn
-1606|Bị ho ra máu
-1607|Bị khó thở
+1605|Bị đờm trong cổ
+1606|Cảm giác buồn nôn
+1607|Bị ho ra máu
+1608|Bị khó thở
 1701|Thường xuyên hút thuốc
 1702|Thỉnh thoảng hút thuốc
 1703|Không hút thuốc
