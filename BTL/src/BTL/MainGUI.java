@@ -24,8 +24,11 @@ public class MainGUI extends javax.swing.JFrame {
     ArrayList<AndRule> listAndRule = new ArrayList<AndRule>();
     ArrayList<OrRule> listOrRule = new ArrayList<OrRule>();
     
+    AddRule formAddRule = new AddRule();
+    
     public MainGUI() {
         initComponents();
+        formAddRule.setVisible(false);
         if (!LoadFileEvent())
             System.exit(0);
         if (!LoadFileSingleRule())
