@@ -1,47 +1,68 @@
 1101|Nhiệt độ cơ thể là 37 độ C
-1102|Nhiệt độ cơ thể lớn hơn 37 độ C
-1103|Nhiệt độ cơ thể nhỏ hơn 37 độ C
-1104|Nhiệt độ cơ thể lớn hơn 38 độ C
+1102|Nhiệt độ cơ thể là 38 độ C
+1103|Nhiệt độ cơ thể là 39 C
+1104|Nhiệt độ cơ thể lớn hơn 39 độ C
+1105|Nhiệt độ cơ thể là 36 độ C
 1105|Nhiệt độ cơ thể nhỏ hơn 36 độ C
+
 1151|Bị sốt
 1152|Bị sốt cao
 1153|Bị hạ thân nhiệt
-1201|Tuổi nhỏ hơn hoặc bằng 5
-1202|Tuổi nhỏ hơn hoặc bằng 10
-1203|Tuổi nhỏ hơn hoặc bằng 25
-1204|Tuổi nhỏ hơn hoặc bằng 30
-1205|Tuổi nhỏ hơn hoặc bằng 55
-1206|Tuổi nhỏ hơn hoặc bằng 70
-1207|Tuổi lớn hơn 5
-1208|Tuổi lớn hơn 10
-1209|Tuổi lớn hơn 25
-1210|Tuổi lớn hơn 35
-1211|Tuổi lớn hơn 55
-1212|Tuổi lớn hơn 70
+1154|Thân nhiệt bình thường
+
+1201|Tuổi nhỏ hơn hoặc bằng 15
+1202|Tuổi nhỏ hơn hoặc bằng 70
+1203|Tuổi lớn hơn 15
+1204|Tuổi lớn hơn 70
+1251|Là trẻ em
+1252|Là người lớn
+1253|Là người cao tuổi
+
 1301|Nhịp tim từ 65 tới 75 nhịp/phút
 1302|Nhịp tim hơn 75 nhịp/phút
 1303|Nhịp tim dưới 65 nhịp/phút
-1401|Chiều cao dưới 1m50
-1402|Chiều cao từ 1m50 tới 1m70
-1403|Chiều cao trên 1m70
-1501|Cân nặng dưới 40kg
-1502|Cân nặng từ 40 kg tới dưới 60kg
-1503|Cân nặng từ 60 kg tới dưới 80kg
-1504|Cân nặng trên 80 kg
-1601|Bị ngạt mũi
-1602|Bị nhức đầu
-1603|Bị hắt hơi
-1604|Bị ho
+1351|Nhịp tim nhanh
+1352|Nhịp tim chậm
+1353|Nhịp tim bình thường
+
+1401|Là nam giới
+1402|Là nữ giới
+
+1501|Cơ thể gầy
+1502|Cơ thể béo
+1503|Cơ thể bình thường
+
+1601|Ho
+1602|Ho ra máu
+1603|Ho có đờm
+1604|Đau ngực
 1605|Bị đờm trong cổ
-1606|Cảm giác buồn nôn
-1607|Bị ho ra máu
-1608|Bị khó thở
+1606|Khó nuốt
+1607|Nhức đầu
+1608|Khó thở
+1609|Thở khò khè
+1610|Mệt mỏi
+1611|Khạc nhiều đờm
+1612|Đau nhức cơ bắp
+1613|Chóng mặt
+1614|Đau họng
+1615|Chảy nước mắt
+1616|Đau đầu
+1617|Đau rát họng
+1618|Sưng amiđan
+1619|Đau vùng mắt, trán
+1620|Đau xương hàm
+1621|Thở gấp
+1622|Nói khó
+1623|Tức ngực
+
 1701|Thường xuyên hút thuốc
 1702|Thỉnh thoảng hút thuốc
 1703|Không hút thuốc
 1704|Uống rượu bia nhiều
 1705|Uống rượu bia ít
 1706|Không uống rượu bia
+
 5101|Bạn bị bệnh cảm cúm do virus
 5102|Bạn bị bệnh viêm họng
 5103|Bạn bị bệnh viêm phổi
