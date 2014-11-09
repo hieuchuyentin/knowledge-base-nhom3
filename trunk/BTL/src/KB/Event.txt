@@ -63,15 +63,15 @@
 1705|Uống rượu bia ít
 1706|Không uống rượu bia
 
-5101|Bạn bị bệnh cảm cúm do virus
-5102|Bạn bị bệnh viêm họng
-5103|Bạn bị bệnh viêm phổi
-5104|Bạn bị bệnh viêm xoang
-5105|Bạn bị bệnh hen phế quản
-5106|Bạn bị bệnh lao phổi
-5107|Bạn bị bệnh ung thư phổi
-5108|Bạn bị bệnh phổi tắc nghẽn mãn tính
-5109|Bạn bị bệnh dãn phế quản
-5110|Bạn bị bệnh ho gà
-5111|Bạn bị bệnh bụi phổi
-5112|Bạn bị tràn dịch màng phổi
+5101|Bệnh nhân bị bệnh cảm cúm do virus
+5102|Bệnh nhân bị bệnh viêm họng
+5103|Bệnh nhân bị bệnh viêm phổi
+5104|Bệnh nhân bị bệnh viêm xoang
+5105|Bệnh nhân bị bệnh hen phế quản
+5106|Bệnh nhân bị bệnh lao phổi
+5107|Bệnh nhân bị bệnh ung thư phổi
+5108|Bệnh nhân bị bệnh phổi tắc nghẽn mãn tính
+5109|Bệnh nhân bị bệnh dãn phế quản
+5110|Bệnh nhân bị bệnh ho gà
+5111|Bệnh nhân bị bệnh bụi phổi
+5112|Bệnh nhân bị tràn dịch màng phổi
