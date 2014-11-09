@@ -24,11 +24,10 @@ public class MainGUI extends javax.swing.JFrame {
     ArrayList<AndRule> listAndRule = new ArrayList<AndRule>();
     ArrayList<OrRule> listOrRule = new ArrayList<OrRule>();
     
-    AddRule formAddRule = new AddRule(this);
+    AddRule formAddRule;
     
     public MainGUI() {
         initComponents();
-        formAddRule.setVisible(false);
         if (!LoadFileEvent())
             System.exit(0);
         if (!LoadFileSingleRule())
@@ -37,6 +36,10 @@ public class MainGUI extends javax.swing.JFrame {
             System.exit(0);
         if (!LoadFileOrRule())
             System.exit(0);
+        
+        formAddRule = new AddRule(this);
+        formAddRule.setVisible(false);
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -300,6 +303,7 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         btTest = new javax.swing.JButton();
+        btFormAddRule = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -349,6 +353,13 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        btFormAddRule.setText("Thêm luật");
+        btFormAddRule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFormAddRuleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -391,8 +402,10 @@ public class MainGUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(130, 130, 130))
             .addGroup(layout.createSequentialGroup()
-                .addGap(323, 323, 323)
+                .addGap(135, 135, 135)
                 .addComponent(btTest, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(btFormAddRule, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -405,7 +418,11 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
+                        .addGap(106, 106, 106)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btFormAddRule, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btTest, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -433,9 +450,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(btTest, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(111, 111, 111))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(203, 203, 203)
@@ -491,6 +506,11 @@ public class MainGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btTestActionPerformed
 
+    private void btFormAddRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFormAddRuleActionPerformed
+        // TODO add your handling code here:
+        formAddRule.setVisible(true);
+    }//GEN-LAST:event_btFormAddRuleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -527,6 +547,7 @@ public class MainGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btFormAddRule;
     private javax.swing.JButton btTest;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
