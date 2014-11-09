@@ -24,7 +24,7 @@ public class MainGUI extends javax.swing.JFrame {
     ArrayList<AndRule> listAndRule = new ArrayList<AndRule>();
     ArrayList<OrRule> listOrRule = new ArrayList<OrRule>();
     
-    AddRule formAddRule = new AddRule();
+    AddRule formAddRule = new AddRule(this);
     
     public MainGUI() {
         initComponents();
@@ -80,11 +80,24 @@ public class MainGUI extends javax.swing.JFrame {
             catch(Exception e)
             {
                 JOptionPane.showMessageDialog(null, "Lỗi đọc tệp sự kiện", "Lỗi khởi tạo", ERROR_MESSAGE);
+                try
+                {
+                    bufferReader.close();
+                }
+                catch (Exception e1)
+                {            
+                }
                 return false;
             }
         }
         while (true);
-                
+        try
+        {
+            bufferReader.close();
+        }
+        catch (Exception e)
+        {            
+        }
         return true;
     }
     public boolean LoadFileSingleRule()
@@ -126,11 +139,24 @@ public class MainGUI extends javax.swing.JFrame {
             catch(Exception e)
             {
                 JOptionPane.showMessageDialog(null, "Lỗi đọc tệp luật đơn", "Lỗi khởi tạo", ERROR_MESSAGE);
+                try
+                {
+                    bufferReader.close();
+                }
+                catch (Exception e1)
+                {            
+                }
                 return false;
             }
         }
         while (true);
-                
+        try
+        {
+            bufferReader.close();
+        }
+        catch (Exception e)
+        {            
+        }
         return true;
     }
     public boolean LoadFileAndRule()
@@ -173,11 +199,24 @@ public class MainGUI extends javax.swing.JFrame {
             catch(Exception e)
             {
                 JOptionPane.showMessageDialog(null, "Lỗi đọc tệp luật And", "Lỗi khởi tạo", ERROR_MESSAGE);
+                try
+                {
+                    bufferReader.close();
+                }
+                catch (Exception e1)
+                {            
+                }
                 return false;
             }
         }
         while (true);
-                
+        try
+        {
+            bufferReader.close();
+        }
+        catch (Exception e)
+        {            
+        }        
         return true;
     }
     public boolean LoadFileOrRule()
@@ -220,11 +259,24 @@ public class MainGUI extends javax.swing.JFrame {
             catch(Exception e)
             {
                 JOptionPane.showMessageDialog(null, "Lỗi đọc tệp luật Or", "Lỗi khởi tạo", ERROR_MESSAGE);
+                try
+                {
+                    bufferReader.close();
+                }
+                catch (Exception e1)
+                {            
+                }
                 return false;
             }
         }
         while (true);
-                
+        try
+        {
+            bufferReader.close();
+        }
+        catch (Exception e)
+        {            
+        }       
         return true;
     }
     @SuppressWarnings("unchecked")

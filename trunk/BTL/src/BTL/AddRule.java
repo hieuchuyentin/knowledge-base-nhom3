@@ -5,6 +5,7 @@
  */
 package BTL;
 
+import java.io.*;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.*;
 import java.util.*;
@@ -17,8 +18,10 @@ public class AddRule extends javax.swing.JFrame {
     /**
      * Creates new form AddRule
      */
-    public AddRule() {
+    MainGUI mainGUI;
+    public AddRule(MainGUI parent) {
         initComponents();
+        mainGUI = parent;
     }
 
     /**
@@ -158,10 +161,11 @@ public class AddRule extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(spCF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(spCF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31)
                 .addComponent(btAddRule)
                 .addGap(34, 34, 34))
@@ -181,28 +185,139 @@ public class AddRule extends javax.swing.JFrame {
 
     private void cbTypeRuleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTypeRuleItemStateChanged
         // TODO add your handling code here:
-        String s = (String)cbTypeRule.getSelectedItem();
-        if (s.equals("Luật đơn"))
+        String sRule = (String)cbTypeRule.getSelectedItem();
+        if (sRule.equals("Luật đơn"))
         {
             lbTypeRule.setText("");
             cbCondition2.setEnabled(false);
         }
-        if (s.equals("Luật And"))
+        if (sRule.equals("Luật And"))
         {
             lbTypeRule.setText("AND");
             cbCondition2.setEnabled(true);
         }
-        if (s.equals("Luật Or"))
+        if (sRule.equals("Luật Or"))
         {
             lbTypeRule.setText("OR");
             cbCondition2.setEnabled(true);
         }
     }//GEN-LAST:event_cbTypeRuleItemStateChanged
 
+    private boolean AddSingleRule(int nIDCondition, int nIDResult, float dCF)
+    {
+        String stream;
+        SingleRule ruleSingle;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        
+        ruleSingle = new SingleRule(nIDCondition, nIDResult, dCF);
+        if (!mainGUI.listSingleRule.add(ruleSingle))
+        {
+            JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
+            return false;
+        }
+        
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\SingleRule.txt", true);//true để ghi tiếp vào file 
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật đơn", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return false;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "\r\n" 
+                + ruleSingle.nIDCondition + "|" 
+                + ruleSingle.nIDResult + "|" 
+                + ruleSingle.CF
+                + "\r\n";
+        printFile.write(stream);
+        printFile.close();
+        
+        return true;
+    }
+    
+    private boolean AddAndRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
+    {
+        String stream;
+        AndRule ruleAnd;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        
+        ruleAnd = new AndRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        if (!mainGUI.listAndRule.add(ruleAnd))
+        {
+            JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
+            return false;
+        }
+        
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\AndRule.txt", true);//true để ghi tiếp vào file 
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật And", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return false;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "\r\n" 
+                + ruleAnd.nIDCondition1 + "|" 
+                + ruleAnd.nIDCondition2 + "|" 
+                + ruleAnd.nIDResult + "|" 
+                + ruleAnd.CF
+                + "\r\n";
+        printFile.write(stream);
+        printFile.close();
+        
+        return true;
+    }
+    private boolean AddOrRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
+    {
+        String stream;
+        OrRule ruleOr;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        
+        ruleOr = new OrRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        if (!mainGUI.listOrRule.add(ruleOr))
+        {
+            JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
+            return false;
+        }
+        
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\OrRule.txt", true);//true để ghi tiếp vào file 
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật Or", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return false;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "\r\n" 
+                + ruleOr.nIDCondition1 + "|" 
+                + ruleOr.nIDCondition2 + "|" 
+                + ruleOr.nIDResult + "|" 
+                + ruleOr.CF
+                + "\r\n";
+        printFile.write(stream);
+        printFile.close();
+        
+        return true;
+    }
     private void btAddRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddRuleActionPerformed
         // TODO add your handling code here:
         int nIDCondition1, nIDCondition2, nIDResult;
-        String s;
+        String s, sRule;
         int nIndex;
         float dCF;
         
@@ -214,8 +329,8 @@ public class AddRule extends javax.swing.JFrame {
         }
         nIDCondition1 = Integer.parseInt(s.substring(0, s.indexOf('|')));
         
-        s = (String)cbTypeRule.getSelectedItem();
-        if (s.equals("Luật đơn"))
+        sRule = (String)cbTypeRule.getSelectedItem();
+        if (sRule.equals("Luật đơn"))
         {
             nIDCondition2 = -1;
         }
@@ -238,6 +353,20 @@ public class AddRule extends javax.swing.JFrame {
         }
         nIDResult = Integer.parseInt(s.substring(0, s.indexOf('|')));
         
+        dCF = (float) spCF.getValue();
+        
+        if (sRule.equals("Luật đơn"))
+        {
+            AddSingleRule(nIDCondition1, nIDResult, dCF);
+        }
+        if (sRule.equals("Luật And"))
+        {
+            AddAndRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        }
+        if (sRule.equals("Luật Or"))
+        {
+            AddOrRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        }
     }//GEN-LAST:event_btAddRuleActionPerformed
 
     /**
@@ -270,7 +399,7 @@ public class AddRule extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddRule().setVisible(true);
+                new AddRule(new MainGUI()).setVisible(true);
             }
         });
     }
