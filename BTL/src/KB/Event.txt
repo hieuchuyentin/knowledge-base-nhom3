@@ -1,8 +1,7 @@
 1101|Nhiệt độ cơ thể là 37 độ C
-1102|Nhiệt độ cơ thể là 38 độ C
-1103|Nhiệt độ cơ thể là 39 C
-1104|Nhiệt độ cơ thể lớn hơn 39 độ C
-1105|Nhiệt độ cơ thể là 36 độ C
+1102|Nhiệt độ cơ thể từ 38 tới 39 độ C
+1103|Nhiệt độ cơ thể lớn hơn 39 độ C
+1104|Nhiệt độ cơ thể từ 36.5 tới 37.5 độ C
 1105|Nhiệt độ cơ thể nhỏ hơn 36 độ C
 
 1151|Bị sốt
@@ -34,27 +33,28 @@
 
 1601|Ho
 1602|Ho ra máu
-1603|Ho có đờm
-1604|Đau ngực
-1605|Bị đờm trong cổ
+1603|Ho kéo dài
+1604|Ngạt mũi
+1605|Khó thở
 1606|Khó nuốt
-1607|Nhức đầu
-1608|Khó thở
-1609|Thở khò khè
-1610|Mệt mỏi
-1611|Khạc nhiều đờm
+1607|Đau họng
+1608|Rát họng
+1609|Bị đờm
+1610|Thở gấp
+1611|Thở khò khè
 1612|Đau nhức cơ bắp
-1613|Chóng mặt
-1614|Đau họng
-1615|Chảy nước mắt
-1616|Đau đầu
-1617|Đau rát họng
+1613|Nhức đầu
+1614|Chóng mặt
+1615|Đau ngực
+1616|Tức ngực
+1617|Đau đầu
 1618|Sưng amiđan
-1619|Đau vùng mắt, trán
+1619|Đau mắt-trán
 1620|Đau xương hàm
-1621|Thở gấp
+1621|Chảy nước mắt
 1622|Nói khó
-1623|Tức ngực
+1623|Mệt mỏi
+1624|Cảm giác lạnh
 
 1701|Thường xuyên hút thuốc
 1702|Thỉnh thoảng hút thuốc
