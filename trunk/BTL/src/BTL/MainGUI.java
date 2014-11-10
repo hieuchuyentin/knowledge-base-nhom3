@@ -731,10 +731,10 @@ public class MainGUI extends javax.swing.JFrame {
         listInput.add(new Event(1303, 1.0f * (nHeartCount > 75 ? 1 : -1)));
     }
     
-    private void GetIBM()
+    private void GetBMI()
     {
         int nHigh, nWeight;
-        float fHigh, fWeight, fIBM;
+        float fHigh, fWeight, fBMI;
         
         nHigh =  (int) spHigh.getValue();
         nWeight = (int) spWeight.getValue();
@@ -743,12 +743,12 @@ public class MainGUI extends javax.swing.JFrame {
         fWeight = (float) nWeight;
         if ((fHigh <= 0) ||(fWeight <= 0))
             return;
-        fIBM = fWeight * fWeight / fHigh;    
+        fBMI = fWeight / (fHigh * fHigh);    
         
-        listInput.add(new Event(1501, 1.0f * (fIBM < 18 ? 1 : -1)));
+        listInput.add(new Event(1501, 1.0f * (fBMI < 18 ? 1 : -1)));
         listInput.add(new Event(1502, 1.0f * 
-                (((fIBM >= 18) && (fIBM <= 24)) ? 1 : -1)));
-        listInput.add(new Event(1503, 1.0f * (fIBM > 24 ? 1 : -1)));
+                (((fBMI >= 18) && (fBMI <= 24)) ? 1 : -1)));
+        listInput.add(new Event(1503, 1.0f * (fBMI > 24 ? 1 : -1)));
     }
     private void GetSex()
     {
@@ -794,7 +794,7 @@ public class MainGUI extends javax.swing.JFrame {
         GetAge();
         GetDegree();
         GetHeartCount();
-        GetIBM();
+        GetBMI();
         GetSex();
         GetCheckBoxs();
     }
