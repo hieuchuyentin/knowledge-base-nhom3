@@ -222,7 +222,65 @@ public class AddRule extends javax.swing.JFrame {
             cbCondition2.setEnabled(true);
         }
     }//GEN-LAST:event_cbTypeRuleItemStateChanged
-
+    
+    private boolean CheckSingleRuleExist(SingleRule ruleSingle)
+    {
+        int nIndex;
+        boolean bExist;
+        String stream;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        SingleRule ruleTemp;
+        
+        bExist = false;
+        for (nIndex = 0; nIndex < mainGUI.listSingleRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listSingleRule.get(nIndex);
+            if ((ruleTemp.nIDCondition == ruleSingle.nIDCondition)
+                && (ruleTemp.nIDResult == ruleSingle.nIDResult))
+            {
+                bExist = true;
+                break;
+            }    
+        }
+        if (!bExist)
+            return false;
+        if (JOptionPane.showConfirmDialog(this, "Luật đã có trong cơ sở tri thức. Bạn có muốn cập nhật lại độ tin cậy không?", 
+                "Xác nhận", YES_NO_OPTION) == NO_OPTION)
+            return true;
+        
+        ruleTemp = mainGUI.listSingleRule.set(nIndex, ruleSingle);
+                
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\SingleRule.txt", false);//false để xóa nội dung file trước khi ghi
+        }
+        catch(Exception e)
+        {
+            mainGUI.listSingleRule.set(nIndex, ruleTemp);//Khôi phục lại luật cũ
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật đơn", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return true;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "";
+        for (nIndex = 0; nIndex < mainGUI.listSingleRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listSingleRule.get(nIndex);            
+            stream = stream + 
+                    "\r\n" + ruleTemp.nIDCondition 
+                    + "|" + ruleTemp.nIDResult 
+                    + "|" + ruleTemp.CF 
+                    + "\r\n";
+        }
+        printFile.write(stream);
+        printFile.close();
+        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
+        
+        return true;
+    }
+    
     private boolean AddSingleRule(int nIDCondition, int nIDResult, float dCF)
     {
         String stream;
@@ -231,6 +289,8 @@ public class AddRule extends javax.swing.JFrame {
         PrintWriter printFile;
         
         ruleSingle = new SingleRule(nIDCondition, nIDResult, dCF);
+        if (CheckSingleRuleExist(ruleSingle))
+            return true;
         if (!mainGUI.listSingleRule.add(ruleSingle))
         {
             JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
@@ -260,6 +320,67 @@ public class AddRule extends javax.swing.JFrame {
         return true;
     }
     
+    private boolean CheckAndRuleExist(AndRule ruleAnd)
+    {
+        int nIndex;
+        boolean bExist;
+        String stream;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        AndRule ruleTemp;
+        
+        bExist = false;
+        for (nIndex = 0; nIndex < mainGUI.listAndRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listAndRule.get(nIndex);
+            if ((ruleTemp.nIDResult == ruleAnd.nIDResult)
+                && (((ruleTemp.nIDCondition1 == ruleAnd.nIDCondition1) 
+                        && (ruleTemp.nIDCondition2 == ruleAnd.nIDCondition2))
+                    || ((ruleTemp.nIDCondition1 == ruleAnd.nIDCondition2) 
+                        && (ruleTemp.nIDCondition2 == ruleAnd.nIDCondition1))))
+            {
+                bExist = true;
+                break;
+            }    
+        }
+        if (!bExist)
+            return false;
+        if (JOptionPane.showConfirmDialog(this, "Luật đã có trong cơ sở tri thức. Bạn có muốn cập nhật lại độ tin cậy không?", 
+                "Xác nhận", YES_NO_OPTION) == NO_OPTION)
+            return true;
+        
+        ruleTemp = mainGUI.listAndRule.set(nIndex, ruleAnd);
+                
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\AndRule.txt", false);//false để xóa nội dung file trước khi ghi
+        }
+        catch(Exception e)
+        {
+            mainGUI.listAndRule.set(nIndex, ruleTemp);//Khôi phục lại luật cũ
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật And", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return true;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "";
+        for (nIndex = 0; nIndex < mainGUI.listAndRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listAndRule.get(nIndex);            
+            stream = stream + 
+                    "\r\n" + ruleTemp.nIDCondition1
+                    + "|" + ruleTemp.nIDCondition2
+                    + "|" + ruleTemp.nIDResult 
+                    + "|" + ruleTemp.CF 
+                    + "\r\n";
+        }
+        printFile.write(stream);
+        printFile.close();
+        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
+        
+        return true;
+    }
     private boolean AddAndRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
     {
         String stream;
@@ -268,6 +389,8 @@ public class AddRule extends javax.swing.JFrame {
         PrintWriter printFile;
         
         ruleAnd = new AndRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        if (CheckAndRuleExist(ruleAnd))
+            return true;
         if (!mainGUI.listAndRule.add(ruleAnd))
         {
             JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
@@ -297,6 +420,68 @@ public class AddRule extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
+    
+    private boolean CheckOrRuleExist(OrRule ruleOr)
+    {
+        int nIndex;
+        boolean bExist;
+        String stream;
+        FileOutputStream fileOut;
+        PrintWriter printFile;
+        OrRule ruleTemp;
+        
+        bExist = false;
+        for (nIndex = 0; nIndex < mainGUI.listOrRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listOrRule.get(nIndex);
+            if ((ruleTemp.nIDResult == ruleOr.nIDResult)
+                && (((ruleTemp.nIDCondition1 == ruleOr.nIDCondition1) 
+                        && (ruleTemp.nIDCondition2 == ruleOr.nIDCondition2))
+                    || ((ruleTemp.nIDCondition1 == ruleOr.nIDCondition2) 
+                        && (ruleTemp.nIDCondition2 == ruleOr.nIDCondition1))))
+            {
+                bExist = true;
+                break;
+            }    
+        }
+        if (!bExist)
+            return false;
+        if (JOptionPane.showConfirmDialog(this, "Luật đã có trong cơ sở tri thức. Bạn có muốn cập nhật lại độ tin cậy không?", 
+                "Xác nhận", YES_NO_OPTION) == NO_OPTION)
+            return true;
+        
+        ruleTemp = mainGUI.listOrRule.set(nIndex, ruleOr);
+                
+        try
+        {
+            fileOut = new FileOutputStream("src\\KB\\OrRule.txt", false);//false để xóa nội dung file trước khi ghi
+        }
+        catch(Exception e)
+        {
+            mainGUI.listOrRule.set(nIndex, ruleTemp);//Khôi phục lại luật cũ
+            JOptionPane.showMessageDialog(null, "Không tìm thấy tệp luật Or", "Lỗi ghi luật vào cơ sở tri thức", ERROR_MESSAGE);
+            return true;
+        }
+        
+        printFile = new PrintWriter(fileOut);
+        
+        stream = "";
+        for (nIndex = 0; nIndex < mainGUI.listOrRule.size(); nIndex++)
+        {
+            ruleTemp = mainGUI.listOrRule.get(nIndex);            
+            stream = stream + 
+                    "\r\n" + ruleTemp.nIDCondition1
+                    + "|" + ruleTemp.nIDCondition2
+                    + "|" + ruleTemp.nIDResult 
+                    + "|" + ruleTemp.CF 
+                    + "\r\n";
+        }
+        printFile.write(stream);
+        printFile.close();
+        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
+        
+        return true;
+    }
     private boolean AddOrRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
     {
         String stream;
@@ -305,6 +490,8 @@ public class AddRule extends javax.swing.JFrame {
         PrintWriter printFile;
         
         ruleOr = new OrRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
+        if (CheckOrRuleExist(ruleOr))
+            return true;
         if (!mainGUI.listOrRule.add(ruleOr))
         {
             JOptionPane.showMessageDialog(this, "Lỗi khi thêm luật vào bộ nhớ", "Lỗi", INFORMATION_MESSAGE);            
@@ -371,10 +558,14 @@ public class AddRule extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bạn chưa chọn kết luận", "Hướng dẫn", INFORMATION_MESSAGE);
             return;
         }
-        nIDResult = Integer.parseInt(s.substring(0, s.indexOf('|')));
+        nIDResult = Integer.parseInt(s.substring(0, s.indexOf('|')));      
         
         dCF = (float) spCF.getValue();
-        
+        if ((dCF < -1f) || (dCF > 1f))
+        {
+            JOptionPane.showMessageDialog(this, "Độ tin cậy chưa nằm trong khoảng [-1; 1]", "Hướng dẫn", INFORMATION_MESSAGE);
+            return;
+        }
         if (sRule.equals("Luật đơn"))
         {
            AddSingleRule(nIDCondition1, nIDResult, dCF);
