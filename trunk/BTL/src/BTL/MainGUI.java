@@ -799,10 +799,41 @@ public class MainGUI extends javax.swing.JFrame {
         GetCheckBoxs();
     }
     private void btExecuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExecuteActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
+        int nIndex;
+        Event bestResult = new Event(0, 0f);
+        Event tempEvent = new Event(0, 0f);
         GetInput();
         Calculate cal = new Calculate(listInput, listSingleRule, listAndRule, listOrRule);
+        for (nIndex = 0; nIndex < listEvent.size(); nIndex++)
+        {
+            tempEvent = listEvent.get(nIndex);
+            if ((tempEvent.nID < 5100) || (tempEvent.nID > 5199)) //fake theo chỉ số, cần sửa lại khi hoàn thiện
+                continue;
+            tempEvent.CF = cal.CalculateProbability(tempEvent.nID);
+            if (tempEvent.CF > bestResult.CF)
+            {
+                bestResult.CF = tempEvent.CF;
+                bestResult.nID = tempEvent.nID;
+                bestResult.sDetail = tempEvent.sDetail;
+            }
+        }
         
+        if (bestResult.CF <= 0)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Với thông tin đã nhập, hệ thống chưa đủ căn cứ để chẩn đoán bệnh về đường hô hấp.", 
+                    "Kết quả", INFORMATION_MESSAGE);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Với thông tin đã nhập, hệ thống chẩn đoán: "
+                    + bestResult.sDetail + ".\nĐộ chắc chắn: " 
+                    + bestResult.CF + ".\nMã bệnh: " 
+                    + bestResult.nID, 
+                    "Kết quả", INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btExecuteActionPerformed
 
     private void btFormAddRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFormAddRuleActionPerformed

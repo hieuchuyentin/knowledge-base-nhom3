@@ -70,6 +70,11 @@ public class Calculate {
     }
     private float CalculateCF(float CF1, float CF2)
     {
+        if ((Abs(CF1) > 1) || (Abs(CF2) > 1))
+        {
+            System.out.println("Giá trị CF khi tính toán không hợp lệ");
+            return 0;
+        }
         if ((CF1 == 0) || (CF2 == 0))
             return CF1 + CF2;
         
