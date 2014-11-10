@@ -256,7 +256,7 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
-        
+        JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
     
@@ -294,7 +294,7 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
-        
+        JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
     private boolean AddOrRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
@@ -331,7 +331,7 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
-        
+        JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
     private void btAddRuleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddRuleActionPerformed
@@ -377,21 +377,15 @@ public class AddRule extends javax.swing.JFrame {
         
         if (sRule.equals("Luật đơn"))
         {
-            if (AddSingleRule(nIDCondition1, nIDResult, dCF))
-                JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
-            
+           AddSingleRule(nIDCondition1, nIDResult, dCF);
         }
         if (sRule.equals("Luật And"))
         {
-            if (AddAndRule(nIDCondition1, nIDCondition2, nIDResult, dCF))
-                JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
-                
+            AddAndRule(nIDCondition1, nIDCondition2, nIDResult, dCF);
         }
         if (sRule.equals("Luật Or"))
         {
-            if (AddOrRule(nIDCondition1, nIDCondition2, nIDResult, dCF))
-                JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
-            
+            AddOrRule(nIDCondition1, nIDCondition2, nIDResult, dCF);                       
         }
     }//GEN-LAST:event_btAddRuleActionPerformed
 
