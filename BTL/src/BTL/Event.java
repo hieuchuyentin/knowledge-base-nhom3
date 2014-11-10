@@ -16,13 +16,25 @@ public class Event {
 
     public Event(int nID, float CF) {
         this.nID = nID;
-        this.CF = CF;
+        if ((CF > 1f) || (CF < -1f))
+        {
+            System.out.println("Giá trị CF khi tính toán không hợp lệ");
+            this.CF = 0;
+        }
+        else
+            this.CF = CF;
         this.sDetail = "";
     }
 
     public Event(int nID, float CF, String sDetail) {
         this.nID = nID;
-        this.CF = CF;
+        if ((CF > 1f) || (CF < -1f))
+        {
+            System.out.println("Giá trị CF khi tính toán không hợp lệ");
+            this.CF = 0;
+        }
+        else
+            this.CF = CF;
         this.sDetail = sDetail;
     }
     
