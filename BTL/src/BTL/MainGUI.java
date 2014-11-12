@@ -714,7 +714,7 @@ public class MainGUI extends javax.swing.JFrame {
         listInput.add(new Event(1103, 1.0f * (fDegree > 39f ? 1 : -0.1f)));
         listInput.add(new Event(1104, 1.0f * 
                 ((fDegree >= 36.5f) &&(fDegree <= 37.5f) ? 1 : -0.1f)));
-        listInput.add(new Event(1105, 1.0f * (fDegree < 36f ? 1 : -0.1f)));
+        listInput.add(new Event(1105, 1.0f * (fDegree <= 36f ? 1 : -0.1f)));
     }
     
     private void GetHeartCount()

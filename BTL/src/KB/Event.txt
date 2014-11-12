@@ -2,7 +2,7 @@
 1102|Nhiệt độ cơ thể từ 38 tới 39 độ C
 1103|Nhiệt độ cơ thể lớn hơn 39 độ C
 1104|Nhiệt độ cơ thể từ 36.5 tới 37.5 độ C
-1105|Nhiệt độ cơ thể nhỏ hơn 36 độ C
+1105|Nhiệt độ cơ thể nhỏ hơn hoặc bằng 36 độ C
 
 1151|Bị sốt
 1152|Bị sốt cao
