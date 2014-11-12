@@ -692,10 +692,10 @@ public class MainGUI extends javax.swing.JFrame {
         nAge = (int) spAge.getValue();        
         if (nAge <= 0) 
             return;       
-        listInput.add(new Event(1201, 1.0f * (nAge <= 15 ? 1 : -1)));
-        listInput.add(new Event(1202, 1.0f * (nAge <= 70 ? 1 : -1)));        
-        listInput.add(new Event(1203, 1.0f * (nAge > 15 ? 1 : -1)));
-        listInput.add(new Event(1204, 1.0f * (nAge > 70 ? 1 : -1)));        
+        listInput.add(new Event(1201, 1.0f * (nAge <= 15 ? 1 : -0.1f)));
+        listInput.add(new Event(1202, 1.0f * (nAge <= 70 ? 1 : -0.1f)));        
+        listInput.add(new Event(1203, 1.0f * (nAge > 15 ? 1 : -0.1f)));
+        listInput.add(new Event(1204, 1.0f * (nAge > 70 ? 1 : -0.1f)));        
     }
     
     private void GetDegree()
@@ -708,13 +708,13 @@ public class MainGUI extends javax.swing.JFrame {
         if ((fDegree < 35) || (fDegree > 42))
             return;
         
-        listInput.add(new Event(1101, 1.0f * (fDegree == 37f ? 1 : -1)));
+        listInput.add(new Event(1101, 1.0f * (fDegree == 37f ? 1 : -0.1f)));
         listInput.add(new Event(1102, 1.0f * 
-                ((fDegree >= 38f) && (fDegree <= 39) ? 1 : -1)));
-        listInput.add(new Event(1103, 1.0f * (fDegree > 39f ? 1 : -1)));
+                ((fDegree >= 38f) && (fDegree <= 39) ? 1 : -0.1f)));
+        listInput.add(new Event(1103, 1.0f * (fDegree > 39f ? 1 : -0.1f)));
         listInput.add(new Event(1104, 1.0f * 
-                ((fDegree >= 36.5f) &&(fDegree <= 37.5f) ? 1 : -1)));
-        listInput.add(new Event(1105, 1.0f * (fDegree < 36f ? 1 : -1)));
+                ((fDegree >= 36.5f) &&(fDegree <= 37.5f) ? 1 : -0.1f)));
+        listInput.add(new Event(1105, 1.0f * (fDegree < 36f ? 1 : -0.1f)));
     }
     
     private void GetHeartCount()
@@ -726,9 +726,9 @@ public class MainGUI extends javax.swing.JFrame {
             return;
         
         listInput.add(new Event(1301, 1.0f * 
-                (((nHeartCount >= 65) && (nHeartCount <= 75)) ? 1 : -1)));
-        listInput.add(new Event(1302, 1.0f * (nHeartCount < 65 ? 1 : -1)));
-        listInput.add(new Event(1303, 1.0f * (nHeartCount > 75 ? 1 : -1)));
+                (((nHeartCount >= 65) && (nHeartCount <= 75)) ? 1 : -0.1f)));
+        listInput.add(new Event(1302, 1.0f * (nHeartCount < 65 ? 1 : -0.1f)));
+        listInput.add(new Event(1303, 1.0f * (nHeartCount > 75 ? 1 : -0.1f)));
     }
     
     private void GetBMI()
@@ -745,10 +745,10 @@ public class MainGUI extends javax.swing.JFrame {
             return;
         fBMI = fWeight / (fHigh * fHigh);    
         
-        listInput.add(new Event(1501, 1.0f * (fBMI < 18 ? 1 : -1)));
+        listInput.add(new Event(1501, 1.0f * (fBMI < 18 ? 1 : -0.1f)));
         listInput.add(new Event(1502, 1.0f * 
-                (((fBMI >= 18) && (fBMI <= 24)) ? 1 : -1)));
-        listInput.add(new Event(1503, 1.0f * (fBMI > 24 ? 1 : -1)));
+                (((fBMI >= 18) && (fBMI <= 24)) ? 1 : -0.1f)));
+        listInput.add(new Event(1503, 1.0f * (fBMI > 24 ? 1 : -0.1f)));
     }
     private void GetSex()
     {
@@ -757,36 +757,36 @@ public class MainGUI extends javax.swing.JFrame {
         sSex = (String) cbSex.getSelectedItem();
         if ((!sSex.equals("Nam")) && (!sSex.equals("Nữ")))
             return;
-        listInput.add(new Event(1401, 1.0f * (sSex.equals("Nam)") ? 1 : -1)));
-        listInput.add(new Event(1402, 1.0f * (sSex.equals("Nữ)") ? 1 : -1)));        
+        listInput.add(new Event(1401, 1.0f * (sSex.equals("Nam)") ? 1 : -0.1f)));
+        listInput.add(new Event(1402, 1.0f * (sSex.equals("Nữ)") ? 1 : -0.1f)));        
     }
     
     private void GetCheckBoxs()
     {
-        listInput.add(new Event(1601, 1.0f * (cb01.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1602, 1.0f * (cb02.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1603, 1.0f * (cb03.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1604, 1.0f * (cb04.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1605, 1.0f * (cb05.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1606, 1.0f * (cb06.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1607, 1.0f * (cb07.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1608, 1.0f * (cb08.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1609, 1.0f * (cb09.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1610, 1.0f * (cb11.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1611, 1.0f * (cb11.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1612, 1.0f * (cb12.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1613, 1.0f * (cb13.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1614, 1.0f * (cb14.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1615, 1.0f * (cb15.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1616, 1.0f * (cb16.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1617, 1.0f * (cb17.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1618, 1.0f * (cb18.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1619, 1.0f * (cb19.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1620, 1.0f * (cb20.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1621, 1.0f * (cb21.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1622, 1.0f * (cb22.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1623, 1.0f * (cb23.isSelected() ? 1 : -1)));
-        listInput.add(new Event(1624, 1.0f * (cb24.isSelected() ? 1 : -1)));
+        listInput.add(new Event(1601, 1.0f * (cb01.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1602, 1.0f * (cb02.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1603, 1.0f * (cb03.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1604, 1.0f * (cb04.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1605, 1.0f * (cb05.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1606, 1.0f * (cb06.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1607, 1.0f * (cb07.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1608, 1.0f * (cb08.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1609, 1.0f * (cb09.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1610, 1.0f * (cb11.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1611, 1.0f * (cb11.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1612, 1.0f * (cb12.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1613, 1.0f * (cb13.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1614, 1.0f * (cb14.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1615, 1.0f * (cb15.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1616, 1.0f * (cb16.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1617, 1.0f * (cb17.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1618, 1.0f * (cb18.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1619, 1.0f * (cb19.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1620, 1.0f * (cb20.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1621, 1.0f * (cb21.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1622, 1.0f * (cb22.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1623, 1.0f * (cb23.isSelected() ? 1 : 0)));
+        listInput.add(new Event(1624, 1.0f * (cb24.isSelected() ? 1 : 0)));
     }
     private void GetInput()
     {
