@@ -54,8 +54,9 @@ public class AddRule extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btAddRule = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
-        setTitle("Thêm luật mới");
+        setTitle("Điều chỉnh luật");
         setResizable(false);
 
         cbTypeRule.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Luật đơn", "Luật And", "Luật Or" }));
@@ -107,7 +108,7 @@ public class AddRule extends javax.swing.JFrame {
 
         btAddRule.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btAddRule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/them luat.png"))); // NOI18N
-        btAddRule.setText("Thêm luật");
+        btAddRule.setText("Áp dụng");
         btAddRule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAddRuleActionPerformed(evt);
@@ -116,31 +117,17 @@ public class AddRule extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/them.png"))); // NOI18N
 
+        jButton1.setText("Thoát");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(lbTypeRule, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(378, 378, 378))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(spCF, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btAddRule))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(cbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -159,7 +146,34 @@ public class AddRule extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addComponent(jLabel8))
                     .addComponent(jLabel2)
-                    .addComponent(cbCondition2, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(cbCondition2, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spCF, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addGap(121, 121, 121)
+                                .addComponent(btAddRule))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(274, 274, 274))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(39, 39, 39)
+                                .addComponent(cbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbTypeRule, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(378, 378, 378))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +212,9 @@ public class AddRule extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(spCF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btAddRule, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -297,6 +313,8 @@ public class AddRule extends javax.swing.JFrame {
         }
         printFile.write(stream);
         printFile.close();
+        mainGUI.formViewRule.ShowSingleRuleList();
+        
         JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
         
         return true;
@@ -337,6 +355,8 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
+        mainGUI.formViewRule.ShowSingleRuleList();
+                
         JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
@@ -398,8 +418,9 @@ public class AddRule extends javax.swing.JFrame {
         }
         printFile.write(stream);
         printFile.close();
-        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
+        mainGUI.formViewRule.ShowAndRuleList();
         
+        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
     private boolean AddAndRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
@@ -438,6 +459,8 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
+        mainGUI.formViewRule.ShowAndRuleList();
+        
         JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
@@ -499,8 +522,9 @@ public class AddRule extends javax.swing.JFrame {
         }
         printFile.write(stream);
         printFile.close();
-        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
+        mainGUI.formViewRule.ShowOrRuleList();
         
+        JOptionPane.showMessageDialog(this, "Sửa thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
     private boolean AddOrRule(int nIDCondition1, int nIDCondition2, int nIDResult, float dCF)
@@ -539,6 +563,8 @@ public class AddRule extends javax.swing.JFrame {
                 + "\r\n";
         printFile.write(stream);
         printFile.close();
+        mainGUI.formViewRule.ShowOrRuleList();
+        
         JOptionPane.showMessageDialog(this, "Thêm thành công luật", "Thông báo", INFORMATION_MESSAGE);
         return true;
     }
@@ -605,6 +631,11 @@ public class AddRule extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbCondition2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -646,6 +677,7 @@ public class AddRule extends javax.swing.JFrame {
     private javax.swing.JComboBox cbCondition2;
     private javax.swing.JComboBox cbResult;
     private javax.swing.JComboBox cbTypeRule;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
