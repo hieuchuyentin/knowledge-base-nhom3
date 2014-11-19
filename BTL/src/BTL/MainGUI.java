@@ -26,6 +26,8 @@ public class MainGUI extends javax.swing.JFrame {
     
     AddRule formAddRule;
     ViewRule formViewRule;
+    Guide formGuide;
+    About formAbout;
     
     public MainGUI() {
         initComponents();
@@ -44,6 +46,11 @@ public class MainGUI extends javax.swing.JFrame {
         formViewRule = new ViewRule(this);
         formViewRule.setVisible(false);
         
+        formGuide = new Guide();
+        formGuide.setVisible(false);
+        
+        formAbout = new About();
+        formAbout.setVisible(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -343,6 +350,9 @@ public class MainGUI extends javax.swing.JFrame {
         cbTobaco = new javax.swing.JComboBox();
         jLabel17 = new javax.swing.JLabel();
         btFormViewRule = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hệ thống chẩn đoán bệnh thường gặp ở đường hô hấp");
@@ -714,8 +724,26 @@ public class MainGUI extends javax.swing.JFrame {
                                 .addComponent(cbSex, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(btExecute)
-                        .addGap(0, 20, Short.MAX_VALUE))))
+                        .addGap(0, 17, Short.MAX_VALUE))))
         );
+
+        jMenu1.setText("Hướng dẫn");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Thông tin");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -725,7 +753,9 @@ public class MainGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -970,6 +1000,16 @@ public class MainGUI extends javax.swing.JFrame {
         formViewRule.setFocusable(true);
     }//GEN-LAST:event_btFormViewRuleActionPerformed
 
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        // TODO add your handling code here:
+        formGuide.setVisible(true);
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+        formAbout.setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1052,6 +1092,9 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSpinner spAge;
