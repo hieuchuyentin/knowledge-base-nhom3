@@ -29,6 +29,8 @@ public class MainGUI extends javax.swing.JFrame {
     Guide formGuide;
     About formAbout;
     
+    DieuTri dieuTri = new DieuTri();
+    
     public MainGUI() {
         initComponents();
         if (!LoadFileEvent())
@@ -950,7 +952,7 @@ public class MainGUI extends javax.swing.JFrame {
         for (nIndex = 0; nIndex < listEvent.size(); nIndex++)
         {
             tempEvent = listEvent.get(nIndex);
-            if ((tempEvent.nID < 5100) || (tempEvent.nID > 5199)) //fake theo chỉ số, cần sửa lại khi hoàn thiện
+            if ((tempEvent.nID < 5100) || (tempEvent.nID > 5199))
                 continue;
             tempEvent.CF = cal.CalculateProbability(tempEvent.nID);
             if (tempEvent.CF > bestResult.CF)
@@ -975,6 +977,9 @@ public class MainGUI extends javax.swing.JFrame {
                     + bestResult.CF + ".\nMã bệnh: " 
                     + bestResult.nID, 
                     "Kết quả", INFORMATION_MESSAGE);
+            dieuTri.huongDanDieuTri(String.valueOf(bestResult.nID));
+            dieuTri.setVisible(true);
+            dieuTri.setLocationRelativeTo(null);
         }
     }//GEN-LAST:event_btExecuteActionPerformed
 
