@@ -1,0 +1,9 @@
+Hướng dẫn điều trị bệnh viêm phổi:
+
+-    Kê đơn thuốc điều trị tuỳ theo mức độ nặng của mỗi bệnh nhân.
+-    Lựa chọn kháng sinh điều trị phù hợp với từng chủng vi khuẩn, vi rút, nấm là căn nguyên gây bệnh, nhưng ban đầu (do không có kết quả xét nghiệm tìm căn nguyên gây bệnh) việc chọn thuốc thường theo kinh nghiệm lâm sàng, yếu tố dịch tễ, mức độ nặng của bệnh, tuổi bệnh nhân, các bệnh kèm theo, các tương tác, tác dụng phụ của thuốc.
+-    Thời gian dùng kháng sinh: từ 7 đến 10 ngày nếu do các tác nhân gây viêm phổi điển hình, 14 ngày nếu do các tác nhân không điển hình.
+-    Điều trị triệu chứng nếu cần:
++         Bệnh nhân sốt cao > 380C, hoặc đau ngực nhiều: paracetamol 0,5g x 4 lần/ngày.
++         Bồi phụ nước điện giải: uống nhiều nước hoa quả, có pha thêm1/3 thìa (thìa để xúc cà phê) muối cho mỗi cốc 200ml, bổ xung thêm các vitamin B1, B6 liều cao cho người nghiện rượu.
++         Thở oxy khi bệnh nhân có khó thở hoặc thở nhanh > 25 lần/phút.
